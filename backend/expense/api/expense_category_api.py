@@ -23,7 +23,7 @@ async def get_all_category(db: Session = Depends(get_db)):
     return all_data
 
 
-@router.put('expense-category/{category_id}')
+@router.put('/expense-category/{category_id}')
 async def single_category(category_id: int, db: Session = Depends(get_db)):
     single_category = db.query(ExpenseCategory).filter(
         ExpenseCategory.id == category_id).first()

@@ -3,7 +3,11 @@ from db import engine, Base
 from department.api.department_api import router as department_router
 from department.models.department import Departments
 from expense.models.expense_category import ExpenseCategory
+from expense.models.expense import Expense
+from users.models.users import Users
 from expense.api.expense_category_api import router as expense_cat_router
+from expense.api.expense_api import router as expense
+from users.api.users_api import router as users
 
 
 Base.metadata.create_all(bind=engine)
@@ -12,6 +16,8 @@ app = FastAPI()
 
 app.include_router(department_router)
 app.include_router(expense_cat_router)
+app.include_router(expense)
+app.include_router(users)
 
 
 @app.get('/')
