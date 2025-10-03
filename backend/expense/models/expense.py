@@ -1,5 +1,6 @@
 from db import Base
-from sqlalchemy import Column, String, Float, Integer, Text, Date, ForeignKey,DateTime
+from sqlalchemy import Column, String, Float, Integer, Text, Date, ForeignKey, DateTime
+from sqlalchemy.orm import relationship
 
 
 class Expense(Base):
@@ -12,3 +13,7 @@ class Expense(Base):
     description = Column(Text)
     created_on = Column(DateTime)
     category_id = Column(Integer, ForeignKey('expense_category.id'))
+
+    report_id = Column(Integer, ForeignKey("expense_report.id"))
+
+    report_ids = relationship("ExpenseReport", back_populates="expense_ids")

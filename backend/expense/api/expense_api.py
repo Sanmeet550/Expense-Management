@@ -9,7 +9,9 @@ router = APIRouter(prefix='/expense', tags=['Expense'])
 
 @router.post('/create')
 async def create(expense: ExpenseSchemas, db: Session = Depends(get_db)):
-    exp_category = Expense(**expense.dict())
+    print(expense)
+    exp_category = Expense(
+        name=expense.name, total=expense.total, report_id=expense.report_id)
     db.add(exp_category)
     db.commit()
     db.refresh(exp_category)
