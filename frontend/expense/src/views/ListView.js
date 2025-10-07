@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-const ListView = ({ endpoint, formpoint }) => {
+const ListView = ({ endpoint, formpoint, createpoint }) => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
@@ -43,7 +43,9 @@ const ListView = ({ endpoint, formpoint }) => {
         <h3>List</h3>
         <button
           className="btn btn-success"
-          onClick={() => navigate(formpoint, { state: { columns } })}
+          onClick={() =>
+            navigate(formpoint, { state: { columns, createpoint } })
+          }
         >
           New
         </button>

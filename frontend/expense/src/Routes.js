@@ -4,8 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Department from "./components/Department";
 import Expense from "./components/Expense";
 import ExpenseReport from "./components/ExpenseReport";
-import DepartmentFormView from "./views/DepartmentFormView";
-import ExpenseFormView from "./views/ExpenseFormView";
+import DynamicFormPage from "./views/FormView";
 import FormView from "./views/FormView";
 
 function projectRoute() {
@@ -21,9 +20,9 @@ function projectRoute() {
           // View button
           <Route path="/new" element={<FormView />} />
           // Department form
-          <Route path="/department/form" element={<DepartmentFormView />} />
+          <Route path="/department/form" element={<DynamicFormPage />} />
           //Expense form
-          <Route path="/expense/form" element={<ExpenseFormView />} />
+          <Route path="/expense/form" element={<DynamicFormPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

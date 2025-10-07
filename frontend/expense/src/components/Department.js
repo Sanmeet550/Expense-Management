@@ -22,6 +22,7 @@ export default function Department() {
     <ListView
       endpoint={`${fastApi}/department/all_department`}
       formpoint={"/department/form"}
+      createpoint={`${fastApi}/department/create`}
     />
   );
 }

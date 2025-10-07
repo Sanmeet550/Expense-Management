@@ -7,6 +7,7 @@ export default function Expense() {
     <ListView
       endpoint={`${fastApi}/expense-category/all-category`}
       formpoint={"/expense/form"}
+      createpoint={`${fastApi}/expense-category/create`}
     />
   );
 }
