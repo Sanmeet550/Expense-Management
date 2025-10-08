@@ -4,7 +4,7 @@ from sqlalchemy import Integer, String, Boolean, Column, Float
 
 
 class ExpenseCategory(Base):
-    __tablename__ = 'expense.category'
+    __tablename__ = 'expense_category'
 
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String, nullable=False)
